@@ -38,8 +38,21 @@ parser.add_argument('--num_stimuli',           type=int,   nargs=1,   default=1,
 	                                           help='Number of stimuli per shape to generate (default: 1)') 
 parser.add_argument('--num_transformations',   type=int,              default=0, 
 	                                           help='Number of linearly spaced transformations (default:0)')
-parser.add_argument('--shapes',                type=str,   nargs='+', default=['rect','ellipse', 'poly6', 'star5'], 
+parser.add_argument('--shapes',                type=str,   nargs='+', default=['rect','ellipse', 'oval', 'poly6', 'poly7', 'star5', 'star8'], 
 	                                           help='Shapes (rect, polyNUM,starNUM, ellipse) ')
+python main.py --shapes ellipse && python main.py --shapes ellipse --stim_ellipse_ratio 0.3 1.2
+![ellipse 1](examples/ellipse2.png)
+![ellispe 2](examples/ellipse1.png)
+
+    python main.py --shapes star5 star8 star18
+![star 5](examples/star5.png)
+![star 8](examples/star8.png)
+![star 18](examples/star18.png)
+
+    python main.py --shapes poly3 poly5 poly7
+![poly 3](examples/poly3.png)
+![poly 5](examples/poly5.png)
+![poly 7](examples/poly7.png)
 parser.add_argument('--to_transform',          type=str,   nargs='+', default=[],
 	                                           help='dimensions to transform with num_transformations. \
 	                                           All other dims kept constant (scale,rota,trx,try,colour; default: None)')
